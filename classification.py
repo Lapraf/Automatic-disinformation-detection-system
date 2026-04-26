@@ -55,9 +55,3 @@ class NewsPredictor:
         result_df = pd.concat([df, pred_df], axis=1)
 
         return result_df
-
-# if __name__ == "__main__":
-#     predictor = NewsPredictor(
-#         input_path="uploaded_data.csv"
-#     )
-#     result = predictor.run()

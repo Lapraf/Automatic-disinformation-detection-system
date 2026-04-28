@@ -22,7 +22,7 @@ class AgentState(TypedDict):
 class DisinfoAgent:
     def __init__(self,input_path: str,):
         self.openai_api_key = os.environ.get("OPENAI_API_KEY")
-        self.serp_api_key = os.environ.get("SERP_API_KEY")
+        self.serp_api_key = os.environ.get("SERPAPI_API_KEY")
 
         self.predictor = NewsPredictor(input_path)
 
@@ -75,7 +75,7 @@ class DisinfoAgent:
         return [
             Tool(
                 name="web_search",
-                description="Шукає інформацію в інтернеті для перевірки новин. Використовує DuckDuckGo і fallback на Google.",
+                description="Шукає інформацію в інтернеті для перевірки новин. Використовує Google і fallback на DuckDuckGo.",
                 func=self.smart_search,
             )
         ]
